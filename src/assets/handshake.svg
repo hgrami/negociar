@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
+    <g id="handshake">
+        <path d="M60,120 Q90,80 120,120 Q150,160 180,120" stroke="white" stroke-width="8" fill="none" />
+        <circle cx="60" cy="120" r="10" fill="white" />
+        <circle cx="180" cy="120" r="10" fill="white" />
+    </g>
+</svg>
