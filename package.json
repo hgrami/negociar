@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://hgrami.github.io/negociar",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
@@ -13,16 +14,20 @@
   },
   "dependencies": {
     "@radix-ui/react-alert-dialog": "^1.1.1",
+    "@radix-ui/react-tooltip": "^1.1.3",
     "clsx": "^2.1.1",
     "framer-motion": "^11.9.0",
     "react": "^18.3.1",
+    "react-beautiful-dnd": "^13.1.1",
     "react-dom": "^18.3.1",
     "react-parallax": "^3.5.1",
     "tailwind-merge": "^2.5.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
+    "@types/node": "^22.7.5",
     "@types/react": "^18.3.3",
+    "@types/react-beautiful-dnd": "^13.1.8",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react-swc": "^3.5.0",
     "autoprefixer": "^10.4.20",
