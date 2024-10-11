@@ -46,7 +46,6 @@ const ElArteDeNegociarContent: React.FC = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h3 className="text-2xl font-bold mb-4 text-white">Introducción al Arte de Negociar:</h3>
             <ul className="space-y-4">
               {points.map((point, index) => (
                 <Tooltip.Root key={index}>

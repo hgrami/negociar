@@ -17,7 +17,6 @@ const ConclusionesContent: React.FC = () => {
 
   return (
     <div className="w-full h-full flex flex-col items-center justify-center p-8 text-white">
-      <h2 className="text-3xl font-bold mb-6">Conclusiones Clave</h2>
       
       <div className="w-full max-w-4xl flex flex-col md:flex-row items-center justify-between mb-8">
         <motion.div
