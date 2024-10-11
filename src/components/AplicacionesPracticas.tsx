@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import ElArteDeNegociarContent from './ElArteDeNegociarContent';
 import Quiz from './Quiz';
 import { elArteDeNegociarQuestionsPool } from '../constants/questions';
+import AplicacionesPracticasContent from './AplicacionesPracticasContent';
 
-const ElArteDeNegociar: React.FC = () => {
+const AplicacionesPracticas: React.FC = () => {
   const [showQuiz, setShowQuiz] = useState(false);
 
   return (
     <div className="w-full h-full flex flex-col items-center justify-center text-white p-6">
       {!showQuiz && (
         <>
-          <ElArteDeNegociarContent />
+          <AplicacionesPracticasContent />
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -23,9 +23,9 @@ const ElArteDeNegociar: React.FC = () => {
         </>
       )}
 
-      {showQuiz && <Quiz quizId="elArteDeNegociar" onClose={() => setShowQuiz(false)} questionsPool={elArteDeNegociarQuestionsPool} />}
+      {showQuiz && <Quiz quizId="aplicacionesPracticas" onClose={() => setShowQuiz(false)} questionsPool={elArteDeNegociarQuestionsPool} />}
     </div>
   );
 };
 
-export default ElArteDeNegociar;
+export default AplicacionesPracticas;

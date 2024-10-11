@@ -5,24 +5,34 @@ import * as Tooltip from '@radix-ui/react-tooltip';
 const ElArteDeNegociarContent: React.FC = () => {
   const points = [
     { 
-      icon: '🗣️', 
-      text: 'La comunicación efectiva es fundamental',
-      tooltip: 'Escuchar activamente, expresarse con claridad y mantener un diálogo constructivo son claves para una negociación exitosa.'
-    },
-    { 
       icon: '🤝', 
-      text: 'Entender los intereses de todas las partes',
-      tooltip: 'Identificar las necesidades y motivaciones subyacentes de cada parte permite encontrar soluciones que satisfagan a todos.'
+      text: 'Proceso de comunicación dinámico',
+      tooltip: 'La negociación es un método para resolver conflictos y diferencias de intereses a través del diálogo directo entre dos o más partes.'
     },
     { 
-      icon: '🏆', 
-      text: 'Buscar soluciones mutuamente beneficiosas',
-      tooltip: 'Un enfoque "ganar-ganar" crea acuerdos más duraderos y fortalece las relaciones a largo plazo.'
+      icon: '💼', 
+      text: 'Crucial en el contexto empresarial',
+      tooltip: 'Aplicable en ventas, compras, contrataciones y resolución de conflictos internos.'
     },
     { 
-      icon: '😊', 
-      text: 'Mantener una actitud constructiva y positiva',
-      tooltip: 'Una actitud positiva ayuda a superar obstáculos y fomenta un ambiente propicio para llegar a acuerdos.'
+      icon: '🏠', 
+      text: 'Importante en la vida personal',
+      tooltip: 'Útil para resolver problemas familiares, acuerdos con vecinos y en la educación de los hijos.'
+    },
+    { 
+      icon: '🎯', 
+      text: 'Habilidad que puede desarrollarse',
+      tooltip: 'La negociación es una habilidad que puede aprenderse y perfeccionarse a través del estudio y la práctica.'
+    },
+    {
+      icon: '👥',
+      text: 'Elementos clave',
+      tooltip: 'Partes involucradas, intereses de cada parte, proceso de comunicación, y posibles soluciones o acuerdos.'
+    },
+    {
+      icon: '🏆',
+      text: 'Objetivo final',
+      tooltip: 'Alcanzar un acuerdo que satisfaga los intereses de todas las partes, creando valor y fortaleciendo las relaciones a largo plazo.'
     },
   ];
 
@@ -36,7 +46,7 @@ const ElArteDeNegociarContent: React.FC = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h3 className="text-2xl font-bold mb-4 text-white">Puntos Clave en el Arte de Negociar:</h3>
+            <h3 className="text-2xl font-bold mb-4 text-white">Introducción al Arte de Negociar:</h3>
             <ul className="space-y-4">
               {points.map((point, index) => (
                 <Tooltip.Root key={index}>
@@ -65,17 +75,17 @@ const ElArteDeNegociarContent: React.FC = () => {
             </ul>
           </motion.div>
           <motion.div 
-            className="w-full md:w-1/2 mt-6 md:mt-0 pl-4 flex justify-center items-center"
+            className="w-full md:w-1/2 mt-6 md:mt-0 pl-4 flex flex-col justify-center items-center"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
           >
-            <div className="relative">
+            <div className="relative mb-4">
               <img
                 src={elArteDeNegociarImage}
                 alt="El Arte de Negociar"
                 className="rounded-lg shadow-lg max-w-full h-auto"
-                style={{ maxHeight: '300px', objectFit: 'cover' }}
+                style={{ maxHeight: '250px', objectFit: 'cover' }}
               />
               <motion.div 
                 className="absolute inset-0 bg-gradient-to-t from-purple-900 to-transparent opacity-60 rounded-lg"
@@ -89,10 +99,20 @@ const ElArteDeNegociarContent: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.7 }}
               >
-                <p className="text-lg font-semibold">Domina el arte de la negociación</p>
-                <p className="text-sm">Aprende estrategias efectivas para lograr acuerdos beneficiosos</p>
+                <p className="text-lg font-semibold">El Arte de Negociar</p>
+                <p className="text-sm">Habilidad fundamental en negocios y vida cotidiana</p>
               </motion.div>
             </div>
+            <motion.div
+              className="bg-white bg-opacity-10 rounded-lg p-4 mt-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.9 }}
+            >
+              <p className="text-white text-sm italic">
+                "Negociar es un método para resolver conflictos entre dos o más partes mediante el cual éstas modifican sus demandas hasta llegar a un compromiso aceptable para todos."
+              </p>
+            </motion.div>
           </motion.div>
         </div>
       </div>
@@ -100,4 +120,4 @@ const ElArteDeNegociarContent: React.FC = () => {
   );
 };
 
-export default ElArteDeNegociarContent;  
+export default ElArteDeNegociarContent;

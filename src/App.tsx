@@ -4,9 +4,11 @@ import { AlertDialog, AlertDialogAction, AlertDialogContent, AlertDialogDescript
 import './App.css';
 import ScrollIndicator from './components/ScrollIndicator';
 import ElArteDeNegociar from './components/ElArteDeNegociar';
-import Placeholder from './components/Placeholder'
 import PrincipiosBasicos from './components/PrincipiosBasicos';
 import AnalisisSituacion from './components/AnalisisSituacion';
+import AplicacionesPracticas from './components/AplicacionesPracticas';
+import Estrategias from './components/Estrategias';
+import ConclusionesContent from './components/Conclusiones/ConclusionesContent';
 
 interface Section {
   title: string;
@@ -19,9 +21,9 @@ const sections: Section[] = [
   { title: "El Arte de Negociar", color: "#8A2BE2", description: "El arte de negociar implica habilidades de comunicación, empatía y estrategia para lograr acuerdos mutuamente beneficiosos.", Component: ElArteDeNegociar },
   { title: "Principios Básicos", color: "#FF69B4", description: "Los principios básicos incluyen: separar a las personas del problema, enfocarse en intereses no en posiciones, inventar opciones de beneficio mutuo, y usar criterios objetivos.", Component: PrincipiosBasicos },
   { title: "Análisis de Situación", color: "#1E90FF", description: "El análisis de situación implica evaluar el contexto, las partes involucradas, los intereses en juego y las posibles alternativas antes de negociar.", Component: AnalisisSituacion },
-  { title: "MAPAN y Estrategias", color: "#32CD32", description: "MAPAN (Mejor Alternativa Posible a un Acuerdo Negociado) es crucial para determinar tu poder de negociación y desarrollar estrategias efectivas.", Component: Placeholder },
-  { title: "Aplicaciones Prácticas", color: "#FF7F50", description: "Las aplicaciones prácticas incluyen negociaciones empresariales, diplomáticas, laborales y personales, aplicando los principios aprendidos en situaciones reales.", Component: Placeholder },
-  { title: "Conclusiones", color: "#9932CC", description: "La negociación efectiva es una habilidad que se puede aprender y mejorar con la práctica, llevando a mejores resultados en diversos aspectos de la vida.", Component: Placeholder }
+  { title: "MAPAN y Estrategias", color: "#32CD32", description: "MAPAN (Mejor Alternativa Posible a un Acuerdo Negociado) es crucial para determinar tu poder de negociación y desarrollar estrategias efectivas.", Component: Estrategias },
+  { title: "Aplicaciones Prácticas", color: "#FF7F50", description: "Las aplicaciones prácticas incluyen negociaciones empresariales, diplomáticas, laborales y personales, aplicando los principios aprendidos en situaciones reales.", Component: AplicacionesPracticas },
+  { title: "Conclusiones", color: "#9932CC", description: "La negociación efectiva es una habilidad que se puede aprender y mejorar con la práctica, llevando a mejores resultados en diversos aspectos de la vida.", Component: ConclusionesContent }
 ];
 
 const App: React.FC = () => {
