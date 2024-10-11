@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import principiosBasicosImage from '../assets/principios_basicos.jpg'
+import principiosBasicosImage from '../../assets/principios_basicos.jpg'
 
 interface Principle {
   id: string;

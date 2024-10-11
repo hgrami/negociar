@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import negociadorHabilImage from '../assets/negociador_habilidades.jpg';
+import negociadorHabilImage from '../../assets/negociador_habilidades.jpg';
 import * as Tooltip from '@radix-ui/react-tooltip';
 
 const HabilidadesNegociadorContent: React.FC = () => {

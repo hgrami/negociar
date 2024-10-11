@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import elArteDeNegociarImage from '../assets/el_arte_de_negociar.jpg';
+import elArteDeNegociarImage from '../../assets/el_arte_de_negociar.jpg';
 import * as Tooltip from '@radix-ui/react-tooltip';
 
 const ElArteDeNegociarContent: React.FC = () => {

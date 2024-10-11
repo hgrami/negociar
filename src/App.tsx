@@ -8,7 +8,7 @@ import PrincipiosBasicos from './components/PrincipiosBasicos';
 import AnalisisSituacion from './components/AnalisisSituacion';
 import AplicacionesPracticas from './components/AplicacionesPracticas';
 import Estrategias from './components/Estrategias';
-import ConclusionesContent from './components/Conclusiones/ConclusionesContent';
+import ConclusionesContent from './components/Conclusiones';
 import MembersInfo from './components/MembersInfo';
 
 interface Section {
