@@ -13,13 +13,13 @@ const AplicacionesPracticas: React.FC = () => {
         <>
           <AplicacionesPracticasContent />
           <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-            onClick={() => setShowQuiz(true)}
-          >
-            Comienza el Quiz
-          </motion.button>
+              className="bg-gradient-to-r from-green-500 to-green-600 text-white font-bold py-3 px-6 rounded-full shadow-lg hover:from-green-600 hover:to-green-700 transition-all duration-300 ease-in-out"
+              onClick={() => setShowQuiz(true)}
+              whileHover={{ scale: 1.05, boxShadow: "0px 0px 8px rgb(34,197,94)" }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Comienza el Quiz
+            </motion.button>
         </>
       )}
 
