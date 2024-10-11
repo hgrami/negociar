@@ -7,10 +7,10 @@ const Estrategias: React.FC = () => {
 
   const flashCards = [
     { id: '1', front: '¿Qué es MAPAN?', back: 'Mejor Alternativa Posible a un Acuerdo Negociado' },
-    { id: '2', front: 'Negociación distributiva', back: 'Enfoque ganar-perder, divide un "pastel" fijo' },
-    { id: '3', front: 'Negociación integrativa', back: 'Enfoque ganar-ganar, busca crear valor para todas las partes' },
-    { id: '4', front: 'Anclaje', back: 'Establecer un punto de referencia inicial en la negociación' },
-    { id: '5', front: 'Reciprocidad', back: 'Hacer concesiones a cambio de concesiones de la otra parte' },
+    { id: '2', front: '¿Por qué es importante MAPAN?', back: 'Determina tu poder de negociación y ayuda a establecer límites' },
+    { id: '3', front: 'Ejemplo de MAPAN', back: 'En una negociación salarial, tu MAPAN podría ser una oferta de trabajo de otra empresa' },
+    { id: '4', front: 'Negociación distributiva', back: 'Enfoque ganar-perder, divide un "pastel" fijo' },
+    { id: '5', front: 'Negociación integrativa', back: 'Enfoque ganar-ganar, busca crear valor para todas las partes' },
   ];
 
   return (

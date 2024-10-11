@@ -10,10 +10,9 @@ interface Principle {
 
 interface PrincipiosBasicosContentProps {
   principles: Principle[];
-  onStartActivity: () => void;
 }
 
-const PrincipiosBasicosContent: React.FC<PrincipiosBasicosContentProps> = ({ principles, onStartActivity }) => {
+const PrincipiosBasicosContent: React.FC<PrincipiosBasicosContentProps> = ({ principles }) => {
   return (
     <div className="text-white">
       <div className="flex flex-col md:flex-row items-center mb-6">
@@ -49,15 +48,6 @@ const PrincipiosBasicosContent: React.FC<PrincipiosBasicosContentProps> = ({ pri
           </motion.li>
         ))}
       </ul>
-
-      <motion.button
-        className="bg-white text-pink-700 font-bold py-2 px-4 rounded hover:bg-pink-100 transition duration-300"
-        onClick={onStartActivity}
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-      >
-        Iniciar Actividad Interactiva
-      </motion.button>
     </div>
   );
 };

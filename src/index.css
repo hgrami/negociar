@@ -69,3 +69,20 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/* Add these custom styles */
+.dark {
+  @apply bg-gray-900 text-white;
+}
+
+.dark .bg-white {
+  @apply bg-gray-800;
+}
+
+.dark .text-gray-700 {
+  @apply text-gray-300;
+}
+
+.dark .bg-opacity-20 {
+  @apply bg-opacity-40;
+}

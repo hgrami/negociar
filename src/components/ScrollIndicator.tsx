@@ -1,3 +1,4 @@
+// ScrollIndicator.tsx
 import React from 'react';
 import { motion, MotionValue } from 'framer-motion';
 
@@ -10,7 +11,7 @@ interface ScrollIndicatorProps {
 
 const ScrollIndicator: React.FC<ScrollIndicatorProps> = ({ progress, sections, currentSection, onClick }) => {
   return (
-    <div className="fixed right-4 top-1/2 transform -translate-y-1/2 flex flex-col items-end">
+    <nav className="fixed right-4 top-1/2 transform -translate-y-1/2 flex flex-col items-end" aria-label="Section navigation">
       {sections.map((section, index) => (
         <div
           key={section.title}
@@ -26,7 +27,7 @@ const ScrollIndicator: React.FC<ScrollIndicatorProps> = ({ progress, sections, c
           >
             {section.title}
           </motion.div>
-          <motion.div
+          <motion.button
             className="w-3 h-3 rounded-full bg-white"
             initial={{ scale: 0.5 }}
             animate={{
@@ -34,6 +35,8 @@ const ScrollIndicator: React.FC<ScrollIndicatorProps> = ({ progress, sections, c
               backgroundColor: currentSection === index ? "#ffffff" : "#a0a0a0"
             }}
             transition={{ duration: 0.3 }}
+            aria-label={`Go to ${section.title}`}
+            aria-current={currentSection === index ? "true" : "false"}
           />
         </div>
       ))}
@@ -44,8 +47,9 @@ const ScrollIndicator: React.FC<ScrollIndicatorProps> = ({ progress, sections, c
           originY: 0,
           scaleY: progress
         }}
+        aria-hidden="true"
       />
-    </div>
+    </nav>
   );
 };
 

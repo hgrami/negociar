@@ -10,6 +10,7 @@ import AplicacionesPracticas from './components/AplicacionesPracticas';
 import Estrategias from './components/Estrategias';
 import ConclusionesContent from './components/Conclusiones';
 import MembersInfo from './components/MembersInfo';
+import DarkModeToggle from './components/DarkModeToggle';
 
 interface Section {
   title: string;
@@ -33,6 +34,9 @@ const App: React.FC = () => {
   const [currentSection, setCurrentSection] = useState(0);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [dialogContent, setDialogContent] = useState({ title: '', description: '' });
+  const [progress, setProgress] = useState(0);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end start"]
@@ -49,6 +53,7 @@ const App: React.FC = () => {
       const newSection = Math.floor(scrollYProgress.get() * sections.length);
       if (newSection !== currentSection) {
         setCurrentSection(newSection);
+        setProgress(((newSection + 1) / sections.length) * 100);
       }
     };
 
@@ -56,6 +61,16 @@ const App: React.FC = () => {
     const unsubscribeScroll = scrollYProgress.onChange(handleScroll);
     return () => unsubscribeScroll();
   }, [scrollYProgress, currentSection, sections.length]);
+
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [isDarkMode]);
+
+  const toggleDarkMode = () => setIsDarkMode(!isDarkMode);
 
   const handleIndicatorClick = (index: number) => {
     sectionRefs.current[index]?.scrollIntoView({ behavior: 'smooth' });
@@ -72,43 +87,57 @@ const App: React.FC = () => {
       style={{ backgroundColor }}
       className="min-h-[600vh]"
     >
-      {sections.map((section, index) => (
+      {/* Progress bar */}
+      <div className="fixed top-0 left-0 w-full h-8 bg-gray-200 z-50 shadow-md">
         <motion.div
-          key={section.title}
-          ref={(el) => (sectionRefs.current[index] = el!)}
-          className="section h-screen flex flex-col items-center justify-center relative"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: currentSection === index ? 1 : 0 }}
+          className="h-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-end pr-2 text-white font-bold"
+          style={{ width: `${progress}%` }}
+          initial={{ width: "0%" }}
+          animate={{ width: `${progress}%` }}
           transition={{ duration: 0.5 }}
         >
-          {/* Counter */}
-          <div className="counter absolute left-10 top-1/2 transform -translate-y-1/2">
-            <div className="counter-circle w-20 h-20 rounded-full border-2 border-white flex flex-col items-center justify-center text-white">
-              <span className="text-sm font-bold">{index + 1} / {sections.length}</span>
-            </div>
-          </div>
-
-          {/* Title */}
-          <h1
-            className="title text-4xl font-bold text-white mb-10 cursor-pointer"
-            onClick={() => handleTitleClick(section)}
-          >
-            {section.title}
-          </h1>
-
-          {/* Placeholder for component */}
-          <div className="w-2/3 h-4/5 bg-white bg-opacity-20 rounded-lg overflow-auto">
-            <section.Component />
-          </div>
+          {Math.round(progress)}%
         </motion.div>
-      ))}
+      </div>
+      <DarkModeToggle isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+      <div className="pt-8">
+        {sections.map((section, index) => (
+          <motion.div
+            key={section.title}
+            ref={(el) => (sectionRefs.current[index] = el!)}
+            className="section h-screen flex flex-col items-center justify-center relative"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: currentSection === index ? 1 : 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            {/* Counter */}
+            <div className="counter absolute left-10 top-1/2 transform -translate-y-1/2">
+              <div className="counter-circle w-20 h-20 rounded-full border-2 border-white flex flex-col items-center justify-center text-white">
+                <span className="text-sm font-bold">{index + 1} / {sections.length}</span>
+              </div>
+            </div>
 
+            {/* Title */}
+            <h1
+              className="title text-4xl font-bold text-white mb-10 cursor-pointer"
+              onClick={() => handleTitleClick(section)}
+            >
+              {section.title}
+            </h1>
+
+            {/* Placeholder for component */}
+            <div className="w-2/3 h-7/10 bg-white bg-opacity-20 rounded-lg overflow-auto">
+              <section.Component />
+            </div>
+          </motion.div>
+        ))}
+      </div>
       {/* Scroll indicator */}
       <ScrollIndicator
         progress={scrollYProgress}
         sections={sections}
         currentSection={currentSection}
-        onClick={handleIndicatorClick} 
+        onClick={handleIndicatorClick}
       />
 
       {/* Information Dialog */}
