@@ -17,7 +17,6 @@ const AnalisisSituacionActivity: React.FC<AnalisisSituacionActivityProps> = ({ o
   const [stage, setStage] = useState(0);
   const [stakeholders, setStakeholders] = useState<string[]>([]);
   const [context, setContext] = useState<string[]>([]);
-  const [showSummary, setShowSummary] = useState(false);
 
   const case_study = {
     title: "Fusión Empresarial: TechInnovate y DataPioneer",
@@ -69,8 +68,6 @@ const AnalisisSituacionActivity: React.FC<AnalisisSituacionActivityProps> = ({ o
   const handleNextStage = () => {
     if (stage < stages.length - 1) {
       setStage(stage + 1);
-    } else {
-      setShowSummary(true);
     }
   };
 
@@ -193,14 +190,14 @@ const AnalisisSituacionActivity: React.FC<AnalisisSituacionActivityProps> = ({ o
         >
           Anterior
         </motion.button>
-        {!showSummary ? (
+        {stage < stages.length - 1 ? (
           <motion.button
             className="bg-blue-500 text-white font-bold py-1 px-3 rounded-full hover:bg-blue-600 transition duration-300 text-sm"
             onClick={handleNextStage}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            {stage < stages.length - 1 ? "Siguiente" : "Ver Resumen"}
+            Siguiente
           </motion.button>
         ) : (
           <motion.button
